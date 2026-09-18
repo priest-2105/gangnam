@@ -12,6 +12,7 @@ describe('Review Trust Lens', () => {
     expect(screen.getByText('Procedure verified')).toBeInTheDocument()
     expect(screen.getByText('Surgeon not verified')).toBeInTheDocument()
     expect(screen.getByLabelText('4.6 out of 5')).toHaveTextContent('4.6 / 5')
+    expect(screen.getByText('Original text stays visible')).toBeInTheDocument()
   })
 
   it('reveals and hides the original Korean review', () => {

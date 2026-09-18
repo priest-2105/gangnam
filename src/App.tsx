@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import reviewPipelineIllustration from './assets/illustrations/review-source-pipeline.svg'
 import './App.css'
 
 const review = {
@@ -43,8 +44,14 @@ function App() {
 
       <main id="top">
         <section className="intro" aria-labelledby="page-title">
-          <h1 id="page-title">Don’t just read the translation.<br />See what the review actually tells you.</h1>
-          <p className="intro-copy">A clearer way to separate what the reviewer said, what AI extracted, and what has actually been verified.</p>
+          <div className="intro-message">
+            <h1 id="page-title">Don’t just read the translation.<br />See what the review actually tells you.</h1>
+            <p className="intro-copy">A clearer way to separate what the reviewer said, what AI extracted, and what has actually been verified.</p>
+          </div>
+          <figure className="pipeline-figure">
+            <img src={reviewPipelineIllustration} alt="" />
+            <figcaption><strong>Original text stays visible</strong><span>Source → AI extraction → verification</span></figcaption>
+          </figure>
         </section>
 
         <article className="review" id="clinic" aria-label={`Review of ${review.clinic}`}>

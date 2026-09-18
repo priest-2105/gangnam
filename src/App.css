@@ -27,10 +27,16 @@ button { color: inherit; }
 .menu-toggle { display: none; width: 42px; height: 42px; padding: 8px; border: 1px solid var(--line-dark); border-radius: 50%; background: transparent; cursor: pointer; }
 .menu-icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .mobile-nav { display: none; }
-.intro { padding: 78px 0 48px; }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 62px; align-items: end; padding: 78px 0 48px; }
+.intro-message { min-width: 0; }
 h1, h2, h3, h4, p { margin-top: 0; }
 h1 { max-width: 930px; margin-bottom: 22px; font-size: clamp(2.45rem, 5vw, 4.35rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.02; }
 .intro-copy { max-width: 670px; margin-bottom: 0; color: var(--muted); font-size: 1.08rem; }
+.pipeline-figure { margin: 0 0 4px; padding: 18px; border-radius: 14px; background: #f2e6eb; }
+.pipeline-figure img { display: block; width: 100%; height: auto; }
+.pipeline-figure figcaption { display: grid; gap: 2px; margin-top: 11px; padding-top: 11px; border-top: 1px solid rgba(199, 53, 114, .25); }
+.pipeline-figure strong { color: #762342; font-size: .74rem; }
+.pipeline-figure span { color: #705864; font-size: .65rem; }
 .review { display: grid; grid-template-columns: minmax(0, 1fr) 330px; background: var(--surface); border: 1px solid var(--line-dark); border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px rgba(39, 45, 40, .07); }
 .review-main { min-width: 0; padding: 48px 50px 50px; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; }
@@ -103,7 +109,9 @@ footer { margin-top: 30px; padding: 25px 0 42px; display: flex; justify-content:
   .mobile-nav > a:nth-child(even) { text-align: right; }
   .mobile-nav > a.active { color: var(--brand); font-weight: 750; }
   .mobile-nav-meta { grid-column: 1 / -1; display: flex; justify-content: space-between; padding-top: 15px; color: var(--muted); font-size: .72rem; }
-  .intro { padding: 52px 0 34px; }
+  .intro { grid-template-columns: 1fr; gap: 24px; padding: 52px 0 34px; }
+  .pipeline-figure { display: grid; grid-template-columns: 92px 1fr; gap: 14px; align-items: center; padding: 12px 15px; }
+  .pipeline-figure figcaption { margin: 0; padding: 0 0 0 14px; border-top: 0; border-left: 1px solid rgba(199, 53, 114, .25); }
   h1 { font-size: 2.45rem; } h1 br { display: block; } .intro-copy { font-size: .96rem; }
   .review-main { padding: 30px 22px 34px; } .tags { margin-bottom: 28px; } .review-heading { display: block; }
   .rating { margin-top: 14px; } blockquote { margin: 28px 0 22px; font-size: 1.22rem; }
