@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import App from './App'
 
@@ -41,5 +41,17 @@ describe('Review Trust Lens', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Close navigation' }))
     expect(screen.queryByRole('navigation', { name: 'Mobile navigation' })).not.toBeInTheDocument()
+  })
+
+  it('changes the selected audience', () => {
+    render(<App />)
+    const selector = screen.getByRole('group', { name: 'Desktop audience' })
+    const forHer = within(selector).getByRole('button', { name: 'For Her' })
+    const everyone = within(selector).getByRole('button', { name: 'Everyone' })
+
+    expect(everyone).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(forHer)
+    expect(forHer).toHaveAttribute('aria-pressed', 'true')
+    expect(everyone).toHaveAttribute('aria-pressed', 'false')
   })
 })
